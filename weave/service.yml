@@ -1,5 +1,5 @@
 weave:
-  image: elcolio/os-weave:v0.4.3-dev
+  image: elcolio/os-weave
   container_name: weave
   privileged: true
   labels:
