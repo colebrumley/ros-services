@@ -14,7 +14,10 @@ for d in $(ls -d */); do
 	fi
 done
 
+set +x
+docker login -e $DOCKER_EMAIL -u $DOCKER_REPO_LOGIN -p $DOCKER_PASS
+set -x
+
 if [[ "${1}" == "push" ]]; then
-	docker login -e $DOCKER_EMAIL -u $DOCKER_REPO_LOGIN -p $DOCKER_PASS
-	for d in $(ls -d */); do docker push $REPO_USER/os-${d}:${REPO_TAG}; done
+	for d in $(ls -d */); do docker push $REPO_USER/os-$(echo ${d} | sed 's/\/$//'):${REPO_TAG}; done
 fi
