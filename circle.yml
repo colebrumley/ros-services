@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+
+  environment:
+    REPO_USER: elcolio
+    DOCKER_REPO_LOGIN: elcolio
+    DOCKER_EMAIL: cole.brumley@gmail.com
+
+dependencies:
+  override:
+    - ./build-all.sh
