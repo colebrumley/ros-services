@@ -1,5 +1,6 @@
 convoy:
   image: elcolio/os-convoy:v0.4.3-dev
+  container_name: convoy
   privileged: true
   labels:
     io.rancher.os.scope: system
