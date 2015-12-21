@@ -1,5 +1,5 @@
 convoy:
-  image: elcolio/os-convoy:v0.4.3-dev
+  image: elcolio/os-convoy
   container_name: convoy
   privileged: true
   labels:
