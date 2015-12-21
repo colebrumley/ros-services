@@ -9,4 +9,5 @@ machine:
 
 dependencies:
   override:
+    - sudo apt-get install tar
     - ./build-all.sh
