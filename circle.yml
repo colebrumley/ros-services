@@ -11,3 +11,7 @@ dependencies:
   override:
     - sudo apt-get install tar
     - ./build-all.sh push
+
+test:
+  override:
+    - echo "It's fine. Don't worry about it."
