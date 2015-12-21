@@ -8,8 +8,9 @@ cd $(dirname $0)
 ver=${CONVOY_VERSION:-v0.4.1}
 convoy_url=https://github.com/rancher/convoy/releases/download/${ver}/convoy.tar.gz
 
-wget -O- $convoy_url | tar xzv -
+wget $convoy_url
+tar xzvf convoy.tar.gz
 
 docker build -t ${REPO_USER}/os-convoy:${REPO_TAG} .
 
-rm -Rf convoy
+rm -Rf convoy convoy/ convoy.tar.gz convoy-*
