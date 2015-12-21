@@ -1,0 +1,9 @@
+weave:
+  image: elcolio/os-weave:v0.4.3-dev
+  privileged: true
+  labels:
+    io.rancher.os.scope: system
+    io.rancher.os.after: docker
+  volumes_from:
+    - all-volumes
+  net: host

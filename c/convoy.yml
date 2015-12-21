@@ -1,0 +1,9 @@
+convoy:
+  image: elcolio/os-convoy:v0.4.3-dev
+  privileged: true
+  labels:
+    io.rancher.os.scope: system
+    io.docker.compose.rebuild: false
+  volumes_from:
+    - all-volumes
+  restart: always
