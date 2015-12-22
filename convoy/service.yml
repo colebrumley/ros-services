@@ -1,12 +1,20 @@
-convoy:
+convoy-volumes:
+  name: convoy-volumes
+  image: elcolio/os-convoy-volumes:latest
+  container_name: convoy-volumes
+  privileged: true
+  labels:
+    io.rancher.os.scope: system
+    io.rancher.os.createonly: true
+
+convoy-service:
   name: convoy
-  image: elcolio/os-convoy
+  image: elcolio/os-convoy-service:latest
   container_name: convoy
   privileged: true
   labels:
     io.rancher.os.scope: system
-  volumes:
-    - /opt/lib/convoy:/opt/lib/convoy
   volumes_from:
     - all-volumes
+    - convoy-volumes
   restart: always

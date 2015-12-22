@@ -11,6 +11,8 @@ convoy_url=https://github.com/rancher/convoy/releases/download/${ver}/convoy.tar
 wget $convoy_url
 tar xzvf convoy.tar.gz
 
-docker build -t ${REPO_USER}/os-convoy:${REPO_TAG} .
+for f in $(ls *Dockerfile); do
+	docker build -t ${REPO_USER:-elcolio}/os-${PWD##*/}-$(echo $f | sed 's/\.Dockerfile//'):${REPO_TAG:-latest} -f $f .
+done
 
-rm -Rf convoy convoy/ convoy.tar.gz convoy-*
+rm -Rf convoy/ convoy.tar.gz
