@@ -6,7 +6,7 @@ convoy-volumes:
     io.rancher.os.scope: system
   volumes:
     - /opt/lib/convoy:/opt/lib/convoy
-    - /opt/bin/convoy:/opt/bin/convoy:ro
+    - /opt/bin:/opt/bin:ro
     - /var/run/convoy:/var/run/convoy
   restart: always
 
