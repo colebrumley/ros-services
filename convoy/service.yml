@@ -1,15 +1,16 @@
 convoy-volumes:
+  name: convoy-volumes
   image: elcolio/os-convoy
   container_name: convoy-volumes
   privileged: true
   labels:
     io.rancher.os.scope: system
+    io.rancher.os.createonly: true
   volumes:
     - /opt/lib/convoy:/opt/lib/convoy
-    - /opt/bin:/opt/bin:ro
-    - /var/run/convoy:/var/run/convoy
 
 convoy:
+  name: convoy
   image: elcolio/os-convoy
   container_name: convoy
   privileged: true
