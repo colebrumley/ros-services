@@ -8,7 +8,6 @@ convoy-volumes:
     - /opt/lib/convoy:/opt/lib/convoy
     - /opt/bin:/opt/bin:ro
     - /var/run/convoy:/var/run/convoy
-  restart: always
 
 convoy:
   image: elcolio/os-convoy
