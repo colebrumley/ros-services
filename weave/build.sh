@@ -5,4 +5,8 @@ BASEDIR=$(cd $(dirname $0)/..; pwd)
 
 cd $(dirname $0)
 
-docker build -t ${REPO_USER}/os-weave:${REPO_TAG} .
+for f in $(ls *Dockerfile); do
+	cn=${REPO_USER:-elcolio}/os-${PWD##*/}-$(echo $f | sed 's/\.Dockerfile//'):${REPO_TAG:-latest}
+	docker build -t $cn -f $f .
+	if [[ "$1" == "push" ]]; then docker push $cn; fi
+done
